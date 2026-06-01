@@ -3,11 +3,8 @@ import pandas as pd
 import joblib
 import os
 
-st.write("Current Directory:", os.getcwd())
-st.write("Files Available:", os.listdir("."))
-
-
-model = joblib.load("solar_power_model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "solar_power_model.pkl")
+model = joblib.load(model_path)
 
 
 st.set_page_config(
